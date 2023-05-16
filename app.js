@@ -12,3 +12,4 @@ app.listen(port, () => {
     console.log(`Executando no link: ${host}`)
 });
 
+module.exports = app;
