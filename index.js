@@ -1,8 +1,10 @@
 const express = require('express');
+const cors = require('cors')
 const app = express();
 const port = 8000;
 const host = `http://localhost:${port}`;
 
+app.use(cors())
 app.use(express.json());
 
 app.get('/', (req, res) => {
@@ -10,7 +12,7 @@ app.get('/', (req, res) => {
 });
 
 app.post('/sala', (req, res) => {
-    res.send(JSON.stringify(req.body))
+    res.send(JSON.stringify({message: 'Os dados chegaram', corpo: req.body}))
 })
 
 app.listen(port, () => {
